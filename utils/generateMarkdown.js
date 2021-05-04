@@ -1,4 +1,6 @@
-function getLicenseColor(license) {
+module.exports = generateMarkdown;
+
+function getBadgeColor(license) {
   return license.startsWith('MIT') ? 'yellow' :
     license.startsWith('GPL-3.0') ? 'blue' :
     license.startsWith('Apache') ? 'yellowgreen' :
@@ -6,19 +8,17 @@ function getLicenseColor(license) {
     'light-grey';
 }
 
-function markdownBadge(license) {
-  const test = license.replace('-', '%20').replace('-', '--');
-  console.log(test);
-  return test;
+function getBadgePath(license) {
+  return `License-${license.replace('-', '%20').replace('-', '--')}`;
 }
 
-function getBadge(license) {
-  return `https://img.shields.io/badge/License-${markdownBadge(license)}-${getLicenseColor(license)}.svg`;
+function getBadgeURL(license) {
+  return `https://img.shields.io/badge/${getBadgePath(license)}-${getBadgeColor(license)}.svg`;
 }
 
 function getRenderedLicense(license) {
   if (license === 'None') return 'None';
-  return `[![License](${getBadge(license)})](https://opensource.org/licenses/${license})`;
+  return `[![License](${getBadgeURL(license)})](https://opensource.org/licenses/${license})`;
 }
 
 function generateMarkdown(answers) {
@@ -35,7 +35,7 @@ ${answers.description}
 * [Questions](#questions)
 
 ### Installation
-Clone repo then run this command within the repo directory:
+Clone the repo then run this command within the repo directory from the command line:
 
 \`\`\`${answers.installation}\`\`\`
 
@@ -57,16 +57,3 @@ Run this command within the repo directory:
 If you have any questions, send me an email: ${answers.email}
 `;
 }
-
-module.exports = generateMarkdown;
-
-const examples = [
-  'Title: ',
-  'Description: ',
-  'Installation: ',
-  'Usage: ',
-  'License: ',
-  'Contributing: ',
-  'Tests: ',
-  'Questions: '
-];

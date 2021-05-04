@@ -30,7 +30,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'How does one use this repo?',
+        message: 'How do you use this app?',
         name: 'usage',
     },
     {
