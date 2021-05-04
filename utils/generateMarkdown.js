@@ -37,13 +37,24 @@ ${answers.description}
 ### Installation
 Clone repo then run this command within the repo directory:
 
-\`\`\`npm install\`\`\`
+\`\`\`${answers.installation}\`\`\`
 
 ### Usage
 ${answers.usage}
 
 ### License
 ${getRenderedLicense(answers.license)}
+
+### Contributing
+${answers.contributing}
+
+### Tests
+Run this command within the repo directory:
+
+\`\`\`${answers.tests}\`\`\`
+
+### Questions
+If you have any questions, send me an email: ${answers.email}
 `;
 }
 
