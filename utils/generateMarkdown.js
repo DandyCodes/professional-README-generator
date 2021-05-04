@@ -1,20 +1,61 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function getLicenseColor(license) {
+  return license.startsWith('MIT') ? 'yellow' :
+    license.startsWith('GPL-3.0') ? 'blue' :
+    license.startsWith('Apache') ? 'yellowgreen' :
+    license.startsWith('BSD') ? 'orange' :
+    'light-grey';
+}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function markdownBadge(license) {
+  const test = license.replace('-', '%20').replace('-', '--');
+  console.log(test);
+  return test;
+}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function getBadge(license) {
+  return `https://img.shields.io/badge/License-${markdownBadge(license)}-${getLicenseColor(license)}.svg`;
+}
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+function getRenderedLicense(license) {
+  if (license === 'None') return 'None';
+  return `[![License](${getBadge(license)})](https://opensource.org/licenses/${license})`;
+}
 
+function generateMarkdown(answers) {
+  return `# ${answers.title}
+
+${answers.description}
+
+## Table of Contents:
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+
+### Installation
+Clone repo then run this command within the repo directory:
+
+\`\`\`npm install\`\`\`
+
+### Usage
+${answers.usage}
+
+### License
+${getRenderedLicense(answers.license)}
 `;
 }
 
 module.exports = generateMarkdown;
+
+const examples = [
+  'Title: ',
+  'Description: ',
+  'Installation: ',
+  'Usage: ',
+  'License: ',
+  'Contributing: ',
+  'Tests: ',
+  'Questions: '
+];
