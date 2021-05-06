@@ -28,9 +28,7 @@ This repository is licensed under the [MIT](https://opensource.org/licenses/MIT)
 No contributions at this time.
 
 ### Tests
-Run this command within the repo directory:
-
-```npm test```
+None.
 
 ### Questions
 If you have any questions, head to my [GitHub](https://github.com/DandyCodes) or send me an email at jdabarker@gmail.com.
