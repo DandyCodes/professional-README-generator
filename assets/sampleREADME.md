@@ -1,5 +1,5 @@
 # SampleTitle
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-orange.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 ## Description:
 Sample description of project.
 
@@ -20,7 +20,7 @@ Clone the repo then run this command within the repo directory:
 Sample instructions for using the app.
 
 ### License
-This repository is licensed under the [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause) license.
+This repository is licensed under the [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause) license.
 
 ### Contributing
 Sample instructions for contributing.
