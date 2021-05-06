@@ -15,6 +15,11 @@ const questions = [
     },
     {
         type: 'input',
+        message: 'What is the GitHub username of the author?',
+        name: 'github',
+    },
+    {
+        type: 'input',
         message: 'What is the title of your project?',
         name: 'title',
     },
@@ -30,7 +35,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'How do you use this app?',
+        message: 'How does one use this app?',
         name: 'usage',
     },
     {
