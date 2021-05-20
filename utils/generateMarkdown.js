@@ -1,17 +1,23 @@
 function getBadgeColor(license) {
-  return license.startsWith('MIT') ? 'yellow' :
-    license.startsWith('GPL') ? 'blue' :
-    license.startsWith('Apache') ? 'yellowgreen' :
-    license.startsWith('BSD') ? 'orange' :
-    'light-grey';
+  return license.startsWith("MIT")
+    ? "yellow"
+    : license.startsWith("GPL")
+    ? "blue"
+    : license.startsWith("Apache")
+    ? "yellowgreen"
+    : license.startsWith("BSD")
+    ? "orange"
+    : "light-grey";
 }
 
 function getBadgePath(license) {
-  return `badge/License-${license.replace('-', '%20').replace('-', '--')}`;
+  return `badge/License-${license.replace("-", "%20").replace("-", "--")}`;
 }
 
 function getBadgeURL(license) {
-  return `https://img.shields.io/${getBadgePath(license)}-${getBadgeColor(license)}.svg`;
+  return `https://img.shields.io/${getBadgePath(license)}-${getBadgeColor(
+    license
+  )}.svg`;
 }
 
 function getLicenseURL(license) {
@@ -19,7 +25,7 @@ function getLicenseURL(license) {
 }
 
 function getRenderedLicense(license) {
-  if (license === 'None') return 'None';
+  if (license === "None") return "None";
   return `[![License](${getBadgeURL(license)})](${getLicenseURL(license)})`;
 }
 
@@ -46,7 +52,9 @@ Clone the repo then run this command within the repo directory:
 ${answers.usage}
 
 ### License
-This repository is licensed under the [${answers.license}](${getLicenseURL(answers.license)}) license.
+This repository is licensed under the [${answers.license}](${getLicenseURL(
+    answers.license
+  )}) license.
 
 ### Contributing
 ${answers.contributing}
@@ -57,7 +65,9 @@ Run this command within the repo directory:
 \`\`\`${answers.tests}\`\`\`
 
 ### Questions
-If you have any questions, head to my [GitHub](${`https://github.com/${answers.github}`}) or send me an email at ${answers.email}.`;
+If you have any questions, head to my [GitHub](https://github.com/${
+    answers.github
+  }) or send me an email at ${answers.email}.`;
 }
 
 module.exports = generateMarkdown;
